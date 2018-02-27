@@ -36,8 +36,10 @@ var config = {
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(config.firebase),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
