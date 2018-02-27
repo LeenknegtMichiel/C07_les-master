@@ -13,7 +13,19 @@ import { AuthProvider } from '../providers/auth/auth';
 import { StoreProvider } from '../providers/store/store';
 import { OrderTabsPage } from '../pages/order-tabs/order-tabs';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
+var config = {
+  apiKey: "AIzaSyDGeFSiKaUOoh6Zpno1gSA8WNooggUaCcQ",
+  authDomain: "c0-7-3448d.firebaseapp.com",
+  databaseURL: "https://c0-7-3448d.firebaseio.com",
+  projectId: "c0-7-3448d",
+  storageBucket: "c0-7-3448d.appspot.com",
+  messagingSenderId: "334316351754"
+};
 
 @NgModule({
   declarations: [
@@ -24,6 +36,7 @@ import { OrderTabsPage } from '../pages/order-tabs/order-tabs';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(config.firebase),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,7 +51,8 @@ import { OrderTabsPage } from '../pages/order-tabs/order-tabs';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    StoreProvider
+    StoreProvider,
+    UserServiceProvider
   ]
 })
 export class AppModule {}
