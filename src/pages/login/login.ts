@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { OrderTabsPage } from '../order-tabs/order-tabs';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
+import { RegisterPage } from '../register/register';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -32,11 +34,12 @@ export class LoginPage {
     this.userService.login(this.user.email,this.user.password).then((result)=>{
       if(this.userService.isLoggedIn){
         //if auth succes, go to home
-        this.navCtrl.setRoot(OrderTabsPage);
+        this.navCtrl.setRoot(HomePage);
       }
     })
+  }
 
-    // if auth success, go to home
-    this.navCtrl.setRoot(OrderTabsPage);
+  register(){
+    this.navCtrl.push(RegisterPage);
   }
 }

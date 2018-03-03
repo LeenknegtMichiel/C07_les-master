@@ -7,12 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>menu</ion-title>
+    <ion-title>Order a Pizza</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <h1>Make your pizza:</h1>
+    <ion-list>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Name your pizza"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Extra Cheese"></ion-input>
+        </ion-item>
+        <ion-item-divider color="light">Toppings</ion-item-divider>
+        <ion-item>
+          <ion-input type="text" placeholder="Pepperoni"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Sausage"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Mushrooms"></ion-input>
+        </ion-item>
+        <button ion-button block color="danger" (click)="cart()"><ion-icon name="pizza"></ion-icon>Add to cart</button>
+      </ion-list>
 
 </ion-content>

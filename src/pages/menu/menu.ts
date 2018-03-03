@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CartPage } from '../cart/cart';
 
 /**
  * Generated class for the MenuPage page.
@@ -20,6 +21,10 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  cart(){
+    this.navCtrl.push(CartPage)
   }
 
 }

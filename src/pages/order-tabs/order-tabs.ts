@@ -15,7 +15,6 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class OrderTabsPage {
 
-  homeRoot = 'HomePage'
   menuRoot = 'MenuPage'
   cartRoot = 'CartPage'
 

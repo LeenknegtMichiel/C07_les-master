@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage, App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 
-import { StoreDetailPage } from '../store-detail/store-detail';
-import { StoreProvider } from '../../providers/store/store';
+import { MenuPage } from '../menu/menu';
 
 @IonicPage()
 @Component({
@@ -11,15 +10,13 @@ import { StoreProvider } from '../../providers/store/store';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  stores:any;
 
   constructor(
     public navCtrl: NavController, 
-    public storeProvider:StoreProvider,
     public app:App
   ) 
   {
-    this.stores= storeProvider.getAll();
+    
   }
 
   /*
@@ -28,13 +25,10 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
-
-  showDetail(item:any){
-    this.navCtrl.push(StoreDetailPage,item);
+  order(){
+    console.log("tried going to menu page with tabs")
+    this.navCtrl.setRoot(MenuPage);
+  
   }
-
-  cancelOrder(){
-    console.log("Cancelling order");
-    this.app.getRootNav().setRoot(LoginPage);
-  }
+ 
 }
